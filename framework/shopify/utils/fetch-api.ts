@@ -5,8 +5,13 @@ type FetchParams = {
   query: string;
 };
 
+// 任意のタイプを引数で受け取れる（再利用できる）ジェネリックタイプを宣言
+type FetcherResult<T> = { data: T };
+
 // 非同期宣言したGraphQLをフェッチする関数。仮引数にQueryをいれる
-const fetchApi = async ({ query }: FetchParams) => {
+const fetchApi = async <T>({
+  query,
+}: FetchParams): Promise<FetcherResult<T>> => {
   const url = "https://localhost:400/graphql";
 
   const res = await fetch(url, {
