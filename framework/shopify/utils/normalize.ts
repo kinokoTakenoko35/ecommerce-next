@@ -1,5 +1,5 @@
 import { ImageEdge, Product as ShopifyProduct } from "../schema";
-import { Product } from "../../common/types/product";
+import { Product } from "@common/types/product";
 
 // ImageEdge配列のedgesタイプの引数を受け取り、ImageEdgeの情報から、URLをnormalize化した値を返す
 const normalizeProductImages = ({ edges }: { edges: Array<ImageEdge> }) =>

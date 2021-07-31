@@ -35,7 +35,7 @@ edges {
 }
 `;
 
-const getAllProductsQuery = `
+const getAllProductQuery = `
     query getAllProducts($first: int = 250){
         products(first: $first){
             ${productConnection}
@@ -43,4 +43,4 @@ const getAllProductsQuery = `
     }
 `;
 
-export default getAllProductsQuery;
+export default getAllProductQuery;
